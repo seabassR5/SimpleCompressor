@@ -19,7 +19,7 @@ public class ZIP implements Compressor {
     public void write(String filename, byte[] data) throws IOException {
         StringBuilder sb = new StringBuilder();
 
-        File f = new File("Test.zip");
+        File f = new File("zipTest.zip");
         ZipOutputStream zipOutput = new ZipOutputStream(new FileOutputStream(f));
         ZipEntry e = new ZipEntry(filename);
         zipOutput.putNextEntry(e);
