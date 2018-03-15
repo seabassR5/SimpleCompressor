@@ -19,12 +19,12 @@ import static compressorUtility.CompressorFactory.*;
 
 class Main {
     public static void main(String[] args) throws Exception {
-        ArrayList<String> compressionTypes = getCompressionOptions();
-        //ArrayList<Compressor> compressionStrats = new ArrayList<>();
-        for(String type: compressionTypes){
-            System.out.println(type);
-            createCompressor(type).getFileType();
-        }
+        //ArrayList<String> compressionTypes = CompressorFactory.getCompressionOptions();
+        ////ArrayList<Compressor> compressionStrats = new ArrayList<>();
+        //for(String type: compressionTypes){
+        //    System.out.println(type);
+        //    createCompressor(type).getFileType();
+        //}
         System.out.println("Enter file directory to compress: ");
         Scanner reader = new Scanner(System.in);
         String inputFile = reader.nextLine();
@@ -33,8 +33,6 @@ class Main {
 
         Path path = Paths.get(inputFile);
         CompressorFactory.createCompressor(format).write(inputFile,Files.readAllBytes(path));
-
-
 
         reader.close();
 
