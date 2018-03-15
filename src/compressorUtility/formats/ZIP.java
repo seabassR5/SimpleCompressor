@@ -10,8 +10,6 @@ import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-import static org.apache.commons.compress.archivers.ArchiveEntry.SIZE_UNKNOWN;
-
 public class ZIP implements Compressor {
     public static String fileType = "GZIP";
 
