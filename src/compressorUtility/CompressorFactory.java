@@ -5,8 +5,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.lang.*;
 public class CompressorFactory {
-        public static Compressor createCompressor(String name) throws Exception {
-            Compressor jClass = (Compressor) Class.forName("compressorUtility.formats." + name).newInstance();
+        public static Compressor createCompressor(String name) {
+            Compressor jClass = null;
+            try {
+                jClass = (Compressor) Class.forName("compressorUtility.formats." + name).newInstance();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                System.out.println("Unsuported");
+                e.printStackTrace();
+            }
             return  jClass;
 
         }

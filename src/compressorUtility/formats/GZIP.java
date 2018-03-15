@@ -2,7 +2,12 @@ package compressorUtility.formats;
 
 import compressorUtility.Compressor;
 
-public class GzipCompressor implements Compressor {
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
+
+public class GZIP implements Compressor {
     public static String fileType = "GZIP";
 
     @Override
